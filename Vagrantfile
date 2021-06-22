@@ -37,18 +37,11 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    sudo groupadd docker
     sudo usermod -aG docker ${USER}
-    su -s ${USER}
-
-    sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
-    sudo chmod g+rwx "$HOME/.docker" -R
-
-    usermod -a -G docker jenkins ${USER}
-
     sudo chmod 666 /var/run/docker.sock
-
     sudo systemctl restart docker
+    # Jenkins Password for Login
+    cat /var/lib/jenkins/secrets/initialAdminPassword
   SHELL
 
 end
