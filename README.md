@@ -20,7 +20,7 @@ vagrant up
 vagrant reload --provision
 ```
 
-# Go 192.168.33.10 to open Jenkins
+# Go 192.168.33.10:8080 to open Jenkins
 
 # VM Server Connection
 ```
