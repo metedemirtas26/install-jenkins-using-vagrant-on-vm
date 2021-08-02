@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/xenial64"
   config.vm.hostname = "appsrv01"
+  config.vm.synced_folder "files/", "/home/vagrant/"
 
   config.vm.network "private_network", ip: "192.168.33.10" # work only on this ip
   #config.vm.network "public_network" # if you want to show on your localhost, open this line

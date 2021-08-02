@@ -1,0 +1,1 @@
+openssl pkcs12 -export -in ca.crt -inkey ca.key -out ca.p12
